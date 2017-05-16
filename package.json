@@ -1,0 +1,22 @@
+{
+  "name": "testable-shoe-catalogue-api",
+  "version": "1.0.0",
+  "description": "shoe catalogue api codex 2017",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggsbv/testable-shoe-catalogue-api.git"
+  },
+  "author": "ggsbv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggsbv/testable-shoe-catalogue-api/issues"
+  },
+  "homepage": "https://github.com/ggsbv/testable-shoe-catalogue-api#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
