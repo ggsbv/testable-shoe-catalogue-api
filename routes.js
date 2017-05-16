@@ -61,13 +61,26 @@ module.exports = function(models){
       });
   };
 
+  //GET /api/shoes/color/:color
+  //List all shoes by color
+  const shoeByColor = function(req, res, next){
+    const color = req.params.color;
+
+    models.Shoe
+      .find({ color : color })
+      .then(function(shoes){
+        res.json(shoes);
+      })
+      .catch(function(err){
+        return next(err);
+      });
+  };
+
   //GET /api/shoes/brand/:brandname/size/:size
   //List all shoes by brand name and size
   const shoeByBrandAndSize = function(req, res, next){
     const brandName = req.params.brandname;
-    console.log(brandName);
     const size = req.params.size;
-    console.log(size);
 
     models.Shoe
       .find({ brand : brandName })
@@ -80,10 +93,31 @@ module.exports = function(models){
       });
   };
 
+  //GET /api/shoes/size/:size/color/:color
+  //List all shoes by size and color
+  const shoeBySizeAndColor = function(req, res, next){
+    const size = req.params.size;
+    const color = req.params.color;
+
+    models.Shoe
+      .find({ size : size })
+      .where("color").equals(color)
+      .then(function(shoes){
+        res.json(shoes);
+      })
+      .catch(function(err){
+        return next(err);
+      });
+  };
+
   //PUT /api/shoes/sold/:id
   const shoeSale = function(req, res, next){
-    req.shoe
-      .sale({ $inc : { in_stock : -1 } })
+    var shoeId = req.params.id;
+
+    models.Shoe
+      .update(
+        { _id  : shoeId },
+        { $inc : { in_stock : -1 } })
       .then(function(result){
         res.json(result);
       })
@@ -99,7 +133,7 @@ module.exports = function(models){
     shoeBySize,
     shoeByBrandAndSize,
     shoeSale,
-    catch404,
-    errorHandler
+    shoeByColor,
+    shoeBySizeAndColor
   }
 };

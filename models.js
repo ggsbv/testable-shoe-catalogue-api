@@ -1,3 +1,5 @@
+"use strict";
+
 const mongoose = require("mongoose");
 
 module.exports = function(mongoUrl){
@@ -17,7 +19,7 @@ module.exports = function(mongoUrl){
 
   const ShoeSchema = new Schema({
     brand   : String,
-    color   : String
+    color   : String,
     size    : Number,
     price   : Number,
     in_stock: Number
