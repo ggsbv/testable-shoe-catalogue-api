@@ -10,7 +10,8 @@ const Models = require("./models");
 const Routes = require("./routes");
 const errorHandler = require("./error-handler");
 
-const models = Models("mongodb://localhost/TEST-t-sc-api");
+const models =  Models("mongodb://ggsbv:shoe-catalogue-api@ds017544.mlab.com:17544/shoe-catalogue-api-codex" ||
+                "mongodb://localhost/t-sc-api");
 const routes = Routes(models);
 
 //GET
