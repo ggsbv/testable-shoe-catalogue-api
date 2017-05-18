@@ -83,8 +83,10 @@ module.exports = function(models){
     const size = req.params.size;
 
     models.Shoe
-      .find({ brand : brandName })
-      .where("size").equals(size)
+      .find({
+          brand : brandName,
+          size  : size
+        })
       .then(function(shoes){
         res.json(shoes);
       })
@@ -100,8 +102,10 @@ module.exports = function(models){
     const color = req.params.color;
 
     models.Shoe
-      .find({ size : size })
-      .where("color").equals(color)
+      .find({
+        size  : size,
+        color : color
+      })
       .then(function(shoes){
         res.json(shoes);
       })
