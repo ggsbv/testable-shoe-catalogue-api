@@ -6,6 +6,10 @@ var app = express();
 const jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
+const cors = require('cors');
+
+app.use(cors());
+
 const Models = require("./models");
 const Routes = require("./routes");
 const errorHandler = require("./error-handler");
