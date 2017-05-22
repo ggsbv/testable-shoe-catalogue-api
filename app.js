@@ -14,9 +14,9 @@ const Models = require("./models");
 const Routes = require("./routes");
 const errorHandler = require("./error-handler");
 
-const MONGO_DB_URL = process.env.MONGO_DB_URL || "mongodb://localhost/t-sc-api";
+const mongoUrl = process.env.MONGO_DB_URL || "'mongodb://localhost/t-sc-api'";
 
-const models =  Models(MONGO_DB_URL);
+const models =  Models(mongoUrl);
 const routes = Routes(models);
 
 //GET
