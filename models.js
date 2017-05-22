@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 
 module.exports = function(mongoUrl){
-  mongoose.connect(mongoUrl || "mongodb://localhost/t-sc-api");
+  mongoose.connect(mongoUrl);
 
   var db = mongoose.connection;
 

@@ -14,9 +14,8 @@ const Models = require("./models");
 const Routes = require("./routes");
 const errorHandler = require("./error-handler");
 
-const MONGO_DB_URL = "mongodb://ggsbv:shoe-catalogue-api@ds017544.mlab.com:17544/shoe-catalogue-api-codex"
-
-const models =  Models(process.env.MONGO_DB_URL);
+const models =  Models("mongodb://ggsbv:shoe-catalogue-api@ds017544.mlab.com:17544/shoe-catalogue-api-codex" ||
+                "mongodb://localhost/t-sc-api");
 const routes = Routes(models);
 
 //GET
