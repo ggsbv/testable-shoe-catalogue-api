@@ -6,19 +6,19 @@ var app = express();
 const jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
-const cors = require('cors');
-
-app.use(cors());
-
 const Models = require("./models");
 const Routes = require("./routes");
 const errorHandler = require("./error-handler");
+const cors = require('./cors');
 
 const mongoUrl = process.env.MONGO_DB_URL || "mongodb://localhost/t-sc-api";
 
 
 const models =  Models(mongoUrl);
 const routes = Routes(models);
+
+//CORS, Access Control
+app.use(cors);
 
 //GET
 //Lists all shoes in stock
