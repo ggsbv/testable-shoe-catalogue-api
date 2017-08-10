@@ -48,6 +48,14 @@ app.get("/api/shoes/brand/:brandname/size/:size", routes.shoeByBrandAndSize);
 //List all shoes by size and color
 app.get("/api/shoes/size/:size/color/:color", routes.shoeBySizeAndColor);
 
+//GET /api/shoes/brand/:brandname/size/:size/color/:color
+//List all shoes by brand, size and color
+app.get("/api/shoes/brand/:brandname/size/:size/color/:color", routes.shoeByBrandSizeAndColor);
+
+//GET /api/shoes/brand/:brandname/color/:color
+//List all shoes by size and color
+app.get("/api/shoes/brand/:brandname/color/:color", routes.shoeBySizeAndColor);
+
 //PUT
 //Update shoe stock when shoe is sold
 app.put("/api/shoes/sold/:id", routes.shoeSale);

@@ -18,7 +18,6 @@ module.exports = function (models) {
     //POST /api/shoes
     //Route for adding shoes to stock
     const addShoe = function (req, res, next) {
-        console.log(req.body);
         var newShoe = new models.Shoe(req.body);
 
         newShoe
