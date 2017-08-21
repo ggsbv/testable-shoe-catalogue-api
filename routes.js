@@ -150,20 +150,37 @@ module.exports = function (models) {
             });
     };
 
-    //PUT /api/shoes/sold/:id
-    const shoeSale = function (req, res, next) {
-        var shoeId = req.params.id;
+    const shoeById = function (req, res, next) {
+        const shoeId = req.params.id;
 
         models.Shoe
-            .update(
-                { _id : shoeId },
-                { $inc : { in_stock : - 1 } })
-            .then(function (result) {
-                res.json(result);
+            .findOne({ _id : shoeId })
+            .then(function (shoe) {
+                res.json(shoe);
             })
             .catch(function (err) {
                 return next(err);
             });
+    };
+
+    //PUT /api/shoes/sold/:id
+    const shoeSale = function (req, res, next) {
+        const shoes = req.body;
+        console.log(req.body);
+
+        shoes.forEach((shoe) => {
+            models.Shoe
+                .update(
+                    { _id : shoe._id },
+                    { $inc : { in_stock : - shoe.qty } })
+                .then(function (result) {
+                    res.json(result);
+                })
+                .catch(function (err) {
+                    return next(err);
+                });
+
+        });
     };
 
     return {
@@ -176,6 +193,7 @@ module.exports = function (models) {
         shoeBySizeAndColor,
         shoeByBrandAndColor,
         shoeByBrandSizeAndColor,
+        shoeById,
         shoeSale,
     }
 };
