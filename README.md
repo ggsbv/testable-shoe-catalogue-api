@@ -37,9 +37,9 @@ __2. Want to filter shoes based on their size?__
   ```
   
 __3. Want to filter shoes based on their color?__
-  * Request Type: ` GET `
+  * __Request Type:__ ` GET `
   
-  * __URI__: ` /shoes/color/<color> `
+  * __URI:__ ` /shoes/color/<color> `
   
   * __Example:__ 
   ```
@@ -65,7 +65,7 @@ __4. Want to filter shoes based on a combination of properties?__
 __5. Want to find a shoe based on its ID?__
   * Request Type: ` GET `
   
-  * __URI__: ` /shoes/id/<id> `
+  * __URI:__ ` /shoes/id/<id> `
   
   * __Example:__ 
   ```
@@ -162,3 +162,12 @@ command in the terminal in order to run your unit tests.
 
 6. Run ``` npm install nodemon ``` to install nodemon. This will allow you to run the express server by using the command 
 ` nodemon ` in your terminal while in the project's root.
+
+
+# Additional Notes
+
+__I have created a front-end application that uses this API. Consumers and developers alike may be interested in having a look at it as an example. You can find it here:__
+
+```
+https://github.com/ggsbv/shoe-catalogue-api-frontend
+```
