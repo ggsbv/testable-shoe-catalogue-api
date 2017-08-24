@@ -166,8 +166,4 @@ command in the terminal in order to run your unit tests.
 
 # Additional Notes
 
-__I have created a front-end application that uses this API. Consumers and developers alike may be interested in having a look at it as an example. You can find it here:__
-
-```
-https://github.com/ggsbv/shoe-catalogue-api-frontend
-```
+__I have created a front-end application that uses this API. Consumers and developers alike may be interested in having a look at it as an example. You can find it [here](https://github.com/ggsbv/shoe-catalogue-api-frontend).
